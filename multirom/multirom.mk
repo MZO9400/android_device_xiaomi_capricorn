@@ -1,0 +1,28 @@
+# MultiROM configuration
+
+TARGET_RECOVERY_IS_MULTIROM := true
+MR_NO_KEXEC := enabled
+MR_CONTINUOUS_FB_UPDATE := true
+MR_DPI := xxhdpi
+MR_DPI_FONT := 340
+MR_USE_MROM_FSTAB := true
+MR_FSTAB := $(DEVICE_PATH)/multirom/mrom.fstab
+MR_PIXEL_FORMAT := "RGBA_8888"
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+MR_INPUT_TYPE := type_b
+MR_ENCRYPTION := true
+MR_INIT_DEVICES := $(DEVICE_PATH)/multirom/mr_init_devices.c
+MR_KEXEC_MEM_MIN := 0x85800000
+MR_DEVICE_HOOKS := $(DEVICE_PATH)/multirom/mr_hooks.c
+MR_DEVICE_HOOKS_VER := 4
+MR_DEVICE_VARIANTS := capricorn
+MR_USE_QCOM_OVERLAY := true
+MR_QCOM_OVERLAY_HEADER := $(DEVICE_PATH)/multirom/mr_qcom_overlay.h
+MR_QCOM_OVERLAY_CUSTOM_PIXEL_FORMAT := MDP_RGBX_8888
+DEVICE_RESOLUTION := 1080x1920
+MR_DEV_BLOCK_BOOTDEVICE := true
+MR_POPULATE_BY_NAME_PATH := "/dev/block/platform/soc/624000.ufshc/by-name"
+MR_DEVICE_SPECIFIC_VERSION := a
+BOARD_MKBOOTIMG_ARGS += --board mrom$(MR_REC_VERSION)
+MR_REC_VERSION := $(shell date -u +%Y%m%d)-01
+include $(DEVICE_PATH)/multirom/MR_REC_VERSION.mk

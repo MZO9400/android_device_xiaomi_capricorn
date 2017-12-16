@@ -15,4 +15,8 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_NO_EXFAT_FUSE := true
 TW_INCLUDE_CRYPTO := true
+BOARD_SUPPRESS_EMMC_WIPE := true
+TW_UNMOUNT_FIRMWARE_ON_BOOT := true
+TWHAVE_SELINUX := true
 
+-include device/xiaomi/capricorn/multirom/multirom.mk
