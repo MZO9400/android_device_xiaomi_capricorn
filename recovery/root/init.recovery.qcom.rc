@@ -131,6 +131,9 @@ on enable-low-power
     # Set idle GPU to 133 MHz
     write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
 
+    # Enable Tap to Wake
+    write sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input4/wake_gesture 1
+
 on property:init.svc.recovery=running
     trigger enable-low-power
 
