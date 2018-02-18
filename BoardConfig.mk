@@ -34,7 +34,7 @@ TARGET_KERNEL_CONFIG := capricorn_defconfig
 NXP_CHIP_TYPE := 2
 
 # Properties
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+-include vendor/xiaomi/capricorn/vendor_prop.mk
 
 # inherit from the proprietary version
 -include vendor/xiaomi/capricorn/BoardConfigVendor.mk
